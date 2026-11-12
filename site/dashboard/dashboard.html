@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle Hub | Painel do Jogador</title>
+
+    <!-- fonte da imagem (Poppins). Sem internet o navegador usa Arial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============ MENU LATERAL ============ -->
+        <div class="menu-lateral">
+
+            <div class="logo">
+                <div class="logo-f">B</div>BATTLE HUB
+            </div>
+
+            <div class="menu">
+                <div class="item ativo">Painel</div>
+                <div class="item">Estatísticas</div>
+                <div class="item">Partidas</div>
+                <div class="item">Amigos</div>
+                <div class="item">Loja</div>
+                <div class="item">Conquistas</div>
+            </div>
+
+            <div class="menu menu-rodape">
+                <div class="item">Perfil</div>
+                <div class="item">Configurações</div>
+                <div class="item">Sair</div>
+            </div>
+        </div>
+
+
+        <!-- ============ CONTEÚDO PRINCIPAL ============ -->
+        <div class="principal">
+
+            <!-- título + busca + avatar -->
+            <div class="topo">
+                <div class="titulo-pagina">
+                    <div class="titulo">Painel do Jogador</div>
+                    <div class="subtitulo">Acompanhe suas partidas, eliminações e evolução no Fortnite.</div>
+                </div>
+
+                <div class="topo-direita">
+                    <div class="busca">
+                        <div class="lupa">⌕</div>
+                        <div class="busca-texto">Buscar jogador</div>
+                    </div>
+                    <div class="avatar">JG</div>
+                    <div class="botao-icone">✉</div>
+                </div>
+            </div>
+
+            <div class="conteudo">
+
+                <!-- coluna da esquerda: cards + gráfico -->
+                <div class="coluna-esquerda">
+
+                    <!-- 3 cards de métricas -->
+                    <div class="cards">
+
+                        <div class="card destaque">
+                            <div class="card-topo">
+                                <div>
+                                    <div class="valor">12</div>
+                                    <div class="variacao">↗ +2 esta semana</div>
+                                </div>
+                            </div>
+                            <div class="card-base">
+                                <div>Victory Royales</div>
+                                <div class="seta">→</div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-topo">
+                                <div>
+                                    <div class="valor">1.250</div>
+                                    <div class="variacao">↗ +8,3%</div>
+                                </div>
+                            </div>
+                            <div class="card-base">
+                                <div>Total de Eliminações</div>
+                                <div class="seta">→</div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-topo">
+                                <div>
+                                    <div class="valor">3,8</div>
+                                    <div class="variacao">↗ +0,4</div>
+                                </div>
+                            </div>
+                            <div class="card-base">
+                                <div>Eliminações por Partida</div>
+                                <div class="seta">→</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- os dois gráficos lado a lado, cada um no seu próprio card (Chart.js) -->
+                    <div class="graficos">
+
+                        <div class="bloco grafico">
+                            <div class="bloco-topo">
+                                <div>
+                                    <div class="bloco-titulo">Desempenho Semanal</div>
+                                    <div class="sub">Barras empilhadas (Vitórias, Top 10 e Outras)</div>
+                                </div>
+                                <div class="grafico-acoes">
+                                    <div class="pilula">Este mês ▾</div>
+                                    <div class="mais">⋮</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico-area">
+                                <canvas id="graficoVendas"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="bloco grafico">
+                            <div class="bloco-topo">
+                                <div>
+                                    <div class="bloco-titulo">Modos de Jogo</div>
+                                    <div class="sub">Partidas por modo</div>
+                                </div>
+                                <div class="mais">⋮</div>
+                            </div>
+
+                            <div class="grafico-area">
+                                <canvas id="graficoPizza"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- coluna da direita: produtos + chat -->
+                <div class="coluna-direita">
+
+                    <div class="bloco top-vendas">
+                        <div class="bloco-topo">
+                            <div>
+                                <div class="bloco-titulo">Armas Mais Usadas</div>
+                                <div class="sub">As favoritas da ilha</div>
+                            </div>
+                            <div class="mais">⋮</div>
+                        </div>
+
+                        <div class="lista">
+                            <div class="produto">
+                                <div class="produto-icone">♜</div>
+                                <div>
+                                    <div class="produto-nome">Rifle de Assalto</div>
+                                    <div class="produto-info"><div class="categoria">Rifle</div><div class="nota">★ 4.8</div></div>
+                                </div>
+                            </div>
+                            <div class="produto">
+                                <div class="produto-icone">⌨</div>
+                                <div>
+                                    <div class="produto-nome">Escopeta Tática</div>
+                                    <div class="produto-info"><div class="categoria">Escopeta</div><div class="nota">★ 4.6</div></div>
+                                </div>
+                            </div>
+                            <div class="produto">
+                                <div class="produto-icone">▭</div>
+                                <div>
+                                    <div class="produto-nome">Rifle Sniper</div>
+                                    <div class="produto-info"><div class="categoria">Rifle</div><div class="nota">★ 4.9</div></div>
+                                </div>
+                            </div>
+                            <div class="produto">
+                                <div class="produto-icone">▣</div>
+                                <div>
+                                    <div class="produto-nome">Submetralhadora</div>
+                                    <div class="produto-info"><div class="categoria">Submetralhadora</div><div class="nota">★ 4.7</div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ver-todos">Ver todas ▾</div>
+                    </div>
+
+                    <div class="bloco chat">
+                        <div class="bloco-topo">
+                            <div>
+                                <div class="bloco-titulo">Chat do Esquadrão</div>
+                                <div class="sub">Fique conectado</div>
+                            </div>
+                            <div class="mais">⋮</div>
+                        </div>
+
+                        <div class="mensagem">
+                            <div class="avatar pequeno">CR</div>
+                            <div>
+                                <div class="mensagem-texto">Vitória no último círculo! Foi insano!</div>
+                                <div class="mensagem-autor">Capitão Raven</div>
+                            </div>
+                        </div>
+
+                        <div class="responder">
+                            <div class="responder-texto">Responder</div>
+                            <div class="enviar">Enviar</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--
+        Chart.js. Aqui ele vem da internet (cdnjs).
+        Para funcionar sem internet: baixe o arquivo desse mesmo link, salve na pasta
+        como chart.umd.js e troque o src abaixo por "chart.umd.js".
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+    <script>
+        // aparência para o fundo escuro (mesmas cores do modelo.css)
+        Chart.defaults.color = '#9c98ad';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+        Chart.defaults.font.family = '"Poppins", Arial, sans-serif';
+        Chart.defaults.maintainAspectRatio = false;          // o gráfico preenche o card
+        Chart.defaults.plugins.legend.position = 'bottom';   // legenda embaixo, como na imagem
+
+        const ctx = document.getElementById('graficoVendas');
+
+        // dados do gráfico: um item em "data" para cada semana (Semana 1 a Semana 4)
+        const data = {
+            labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+            datasets: [
+                { label: 'Vitórias', data: [1, 3, 5, 4], backgroundColor: '#ffffff' },
+                { label: 'Top 10', data: [6, 9, 12, 10], backgroundColor: '#2f56a8' },
+                { label: 'Outras', data: [20, 18, 15, 22], backgroundColor: '#a855f7' }
+            ]
+        };
+
+        const stackedBar = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+
+        // ----- gráfico de pizza -----
+        const ctxPizza = document.getElementById('graficoPizza');
+
+        const dataPizza = {
+            datasets: [{
+                data: [60, 30, 10]
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Battle Royale',
+                'Zero Build',
+                'Criativo'
+            ]
+        };
+
+        const pizza = new Chart(ctxPizza, {
+            type: 'pie',
+            data: dataPizza
+        });
+    </script>
+
+</body>
+
+</html>
