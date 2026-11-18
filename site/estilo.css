@@ -403,6 +403,21 @@ input {
     line-height: 1.6;
 }
 
+/* ===== Espaço reservado para fotos na página Minha História ===== */
+.foto-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 24px;
+    border: 3px dashed var(--roxo-claro);
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--roxo-claro);
+    font-weight: bold;
+    text-align: center;
+}
+
 /* ===== Login e cadastro ===== */
 .login {
     flex: 1;
@@ -519,4 +534,3 @@ input {
     border-radius: 50%;
     animation: girar .8s linear infinite;
 }
-
